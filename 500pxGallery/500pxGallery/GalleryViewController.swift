@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GalleryViewController.swift
 //  500pxGallery
 //
 //  Created by Minseo Kwon on 2017-12-18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GalleryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
