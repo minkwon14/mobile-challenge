@@ -34,12 +34,16 @@ class NetworkManager {
     
     func getImage(URL: String) -> UIImage {
         
+        var downloadedImage = UIImage()
+        
         Alamofire.request(URL).responseImage { response in
             if let image = response.result.value {
                 print ("image downloaded: \(image)")
+                downloadedImage = image
             }
         }
         
+        return downloadedImage
     }
     
     
