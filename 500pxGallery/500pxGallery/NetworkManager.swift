@@ -6,9 +6,41 @@
 //  Copyright © 2017 MinKwon. All rights reserved.
 //
 
-import Foundation
+import Alamofire
+import AlamofireImage
 
 class NetworkManager {
+
+    static let sharedInstance = NetworkManager()
+    let baseURL = "https://api.500px.com/v1/"
+    let consumerKey = "&consumer_key=h7m29g7FzppXBTVRkdehIUEk4LhAqFJwERwjwmoa"
+    
+    func getPhotos() -> [Photo] {
+        var photos = [Photo]()
+        let photoURL = URL(string:baseURL + "photos?feature=popular" + consumerKey)
+        
+        Alamofire.request(photoURL!).responseJSON( completionHandler: { response in
+            if let jsonParser = response.result.value as? [String : Any] {
+                let parsedPhoto = PhotoParser()
+                photos = parsedPhoto.parsePhotoJSON(jsonDict: jsonParser)
+                
+            }
+            print(response)
+            }
+        )
+        
+        return photos
+    }
+    
+    func getImage(URL: String) -> UIImage {
+        
+        Alamofire.request(URL).responseImage { response in
+            if let image = response.result.value {
+                print ("image downloaded: \(image)")
+            }
+        }
+        
+    }
     
     
 }

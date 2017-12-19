@@ -10,5 +10,8 @@ import Foundation
 
 class Photo {
     
+    var name = String()
+    var description = String()
+    var imageURL = String()
     
 }
