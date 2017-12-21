@@ -15,7 +15,7 @@ class NetworkManager {
     let baseURL = "https://api.500px.com/v1/"
     let consumerKey = "&consumer_key=h7m29g7FzppXBTVRkdehIUEk4LhAqFJwERwjwmoa"
     
-    func getPhotos() -> [Photo] {
+    func getPhotos(completion: @escaping ([Photo]) -> ()) {
         var photos = [Photo]()
         let photoURL = URL(string:baseURL + "photos?feature=popular" + consumerKey)
         
@@ -23,20 +23,17 @@ class NetworkManager {
             if let jsonParser = response.result.value as? [String : Any] {
                 let parsedPhoto = PhotoParser()
                 photos = parsedPhoto.parsePhotoJSON(jsonDict: jsonParser)
-                
             }
-            print(response)
+                completion(photos)
             }
         )
-        
-        return photos
     }
     
     func getImage(URL: String) -> UIImage {
         
         var downloadedImage = UIImage()
         
-        Alamofire.request(URL).responseImage { response in
+        Alamofire.request(URL+".jpg").responseImage { response in
             if let image = response.result.value {
                 print ("image downloaded: \(image)")
                 downloadedImage = image

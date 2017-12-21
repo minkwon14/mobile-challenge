@@ -15,6 +15,7 @@
 		026DFA081FE880FF00DF3229 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DFA071FE880FF00DF3229 /* Photo.swift */; };
 		026DFA0C1FE8817200DF3229 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DFA0B1FE8817200DF3229 /* NetworkManager.swift */; };
 		026DFA0F1FE88E2500DF3229 /* PhotoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DFA0E1FE88E2500DF3229 /* PhotoParser.swift */; };
+		029202F81FE8CC5700CBC5E3 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029202F71FE8CC5700CBC5E3 /* CustomCell.swift */; };
 		ADE9C7500656F82CFC73CD56 /* Pods_500pxGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE99A490DB57E5C9BF33AE4C /* Pods_500pxGallery.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,8 @@
 		026DFA071FE880FF00DF3229 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		026DFA0B1FE8817200DF3229 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		026DFA0E1FE88E2500DF3229 /* PhotoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoParser.swift; sourceTree = "<group>"; };
+		029202F71FE8CC5700CBC5E3 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		029604BC1FEB872E0050891B /* 500pxGallery-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "500pxGallery-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4980B4F32196F8E9279A249 /* Pods-500pxGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-500pxGallery.release.xcconfig"; path = "Pods/Target Support Files/Pods-500pxGallery/Pods-500pxGallery.release.xcconfig"; sourceTree = "<group>"; };
 		ED07189F172FA0066EBF0D00 /* Pods-500pxGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-500pxGallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-500pxGallery/Pods-500pxGallery.debug.xcconfig"; sourceTree = "<group>"; };
 		EE99A490DB57E5C9BF33AE4C /* Pods_500pxGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_500pxGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +70,7 @@
 		026DF9F31FE87DE100DF3229 /* 500pxGallery */ = {
 			isa = PBXGroup;
 			children = (
+				029202F61FE8CBEC00CBC5E3 /* View */,
 				026DFA0D1FE88E0A00DF3229 /* Parser */,
 				026DFA0A1FE8815600DF3229 /* Network */,
 				026DFA061FE87F2400DF3229 /* Model */,
@@ -76,6 +80,7 @@
 				026DF9FB1FE87DE100DF3229 /* Assets.xcassets */,
 				026DF9FD1FE87DE100DF3229 /* LaunchScreen.storyboard */,
 				026DFA001FE87DE100DF3229 /* Info.plist */,
+				029604BC1FEB872E0050891B /* 500pxGallery-Bridging-Header.h */,
 			);
 			path = 500pxGallery;
 			sourceTree = "<group>";
@@ -102,6 +107,14 @@
 				026DFA0E1FE88E2500DF3229 /* PhotoParser.swift */,
 			);
 			name = Parser;
+			sourceTree = "<group>";
+		};
+		029202F61FE8CBEC00CBC5E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				029202F71FE8CC5700CBC5E3 /* CustomCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		B2636DB2F5040353856093CD /* Pods */ = {
@@ -156,6 +169,7 @@
 				TargetAttributes = {
 					026DF9F01FE87DE100DF3229 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -201,11 +215,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-500pxGallery/Pods-500pxGallery-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -256,6 +272,7 @@
 				026DFA0F1FE88E2500DF3229 /* PhotoParser.swift in Sources */,
 				026DFA081FE880FF00DF3229 /* Photo.swift in Sources */,
 				026DF9F71FE87DE100DF3229 /* GalleryViewController.swift in Sources */,
+				029202F81FE8CC5700CBC5E3 /* CustomCell.swift in Sources */,
 				026DF9F51FE87DE100DF3229 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,12 +411,15 @@
 			baseConfigurationReference = ED07189F172FA0066EBF0D00 /* Pods-500pxGallery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39FK66NX2P;
 				INFOPLIST_FILE = 500pxGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mkwon.-00pxGallery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "500pxGallery/500pxGallery-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -410,12 +430,14 @@
 			baseConfigurationReference = E4980B4F32196F8E9279A249 /* Pods-500pxGallery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39FK66NX2P;
 				INFOPLIST_FILE = 500pxGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mkwon.-00pxGallery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "500pxGallery/500pxGallery-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
